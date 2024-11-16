@@ -1,0 +1,28 @@
+img {
+  max-width:100%;
+}
+
+.item {
+  border: 1px solid #000;
+  margin: 5px 0;
+  padding:5px;
+}
+
+.itemName {
+  font-weight:bold;
+  font-size: 20px;
+}
+
+.descToggle {
+  margin: 10px 0;
+  width:100%;
+}
+
+.plus::after {
+  content: "+";
+  font-weight:bold;
+}
+.minus::after {
+  content: "-";
+  font-weight:bold;
+}
