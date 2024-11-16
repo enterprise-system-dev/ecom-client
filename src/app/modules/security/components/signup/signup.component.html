@@ -1,1 +1,39 @@
-<p>signup works!</p>
+<div class="container wrapper">
+  <form [formGroup]="form" (ngSubmit)="signup()">
+    <br>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <label for="fName" class="form-label">First Name</label>
+        <input formControlName="fName" type="text" class="form-control" id="fName"
+               placeholder="Samantha">
+      </div>
+      <div class="col-12 col-md-4">
+        <label for="lName" class="form-label">Last Name</label>
+        <input formControlName="lName" type="text" class="form-control" id="lName"
+               placeholder="Gayan">
+
+      </div>
+      <div class="col-12">
+        <br>
+      </div>
+      <div class="col-12 col-md-4">
+        <label for="email" class="form-label">Email address</label>
+        <input formControlName="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+      </div>
+      <div class="col-12 col-md-4">
+        <label for="password" class="form-label">Password here</label>
+        <input formControlName="password" type="password" class="form-control" id="password">
+      </div>
+      <div class="col-12">
+        <br>
+        <button type="submit" class="btn btn-primary">Register Now</button>
+      </div>
+      <div class="col-12">
+        <br>
+        <hr>
+        <a routerLink="/security/process/login">Have an Account?</a>
+      </div>
+    </div>
+
+  </form>
+</div>
