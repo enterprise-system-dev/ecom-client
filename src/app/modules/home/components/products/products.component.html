@@ -10,26 +10,23 @@
       <div class="item col-12" *ngFor="let temp of products; index as num">
         <div class="col-2 float-left">
           <div class="itemImg">
-            <img src="{{ temp.ItemPrimaryImageUrl }}">
+            <img src="https://picsum.photos/200/300">
           </div>
         </div>
         <div class="col-3 float-right text-right">
-          <div>Price: {{ temp.BasePrice | currency:'USD' }}.00</div>
+          <div>Price: {{ temp.unitPrice | currency:'USD' }}.00</div>
           <div class="price">
-            <a class="btn btn-primary" href="{{ temp.CustomUrl }}">Add to Cart</a>
+            <a class="btn btn-primary" (click)="addToCart(temp?.productId)">Add to Cart</a>
           </div>
         </div>
         <div class="col-7 float-right">
-          <div class="itemName">{{ temp.ItemName }}</div>
-          <div><u>SKU:</u> {{ temp.ItemNumber }}</div>
-          <!-- <div>{{ catalog[i].CategoryList }}</div> -->
-          <div><u>MFG:</u> {{ temp.Manufacturer }}</div>
+          <div class="itemName">{{ temp.description }}</div>
+          <div><u>QTY On Hand:</u> {{ temp.qty }}</div>
         </div>
         <div class="col-10 float-right">
-          <a routerLink="/home/process/details/{{num}}"
+          <a routerLink="/home/process/details/{{temp?.productId}}"
              data-toggle="collapse"
              aria-expanded="false" aria-controls="collapseExample" class="descToggle btn btn-dark plus">Details</a>
-          <div id="desc{{ num }}" class="desc collapse">{{ temp.LongDescription1 }}</div>
         </div>
       </div>
       <!--        -->
